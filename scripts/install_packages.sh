@@ -1,9 +1,24 @@
 #!/bin/bash
-# Установка библиотек и пакетов ROS
-sudo apt-get update
-sudo apt-get install ros-noetic-velodyne-driver ros-noetic-xsens-driver 
 
-sudo apt update
-sudo apt install ros-noetic-usb-cam ros-noetic-rviz ros-noetic-rqt ros-noetic-socketcan-bridge
+apt-get update
+apt-get upgrade
+apt-get install -y git ros-noetic-velodyne openssh-server curl vim openssh-client \
+  nano ros-noetic-usb-cam ros-noetic-rviz ros-noetic-rqt ros-noetic-socketcan-bridge \
+  ros-noetic-roslint ros-noetic-image-view python3-pip python
 
-git clone https://github.com/belovictor/odrive_can_ros_driver.git
+export DEBIAN_FRONTEND=noninteractive
+export DEBIAN_PRIORITY=critical
+apt-get install -y ros-noetic-pcl-ros
+
+
+python3 -m pip install pyserial
+
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+python get-pip.py
+python -m pip install pyyaml rospkg
+
+
+
+
+
+
