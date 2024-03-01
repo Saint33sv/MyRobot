@@ -15,5 +15,5 @@ rosdep install --from-paths src --ignore-src --rosdistro noetic -y
 cd ~/catkin_ws/ && catkin_make
 
 
-cd
+cd || exit
 source ~/.bashrc
